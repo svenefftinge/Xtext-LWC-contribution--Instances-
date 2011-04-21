@@ -1,0 +1,2 @@
+This is a simple language to create object graphs as requested in the langauge workbench competition (1.1).
+It is implemented in Xtext 2.0, extends Xbase and its components are written in Xtend.
