@@ -1,0 +1,37 @@
+grammar org.xtext.lwc.instances.Instances with org.eclipse.xtext.xbase.Xbase
+
+import "platform:/resource/org.xtext.lwc.instances/model/Instances.ecore"
+import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
+
+
+Instance :
+	{Instance}
+	imports+=Import*
+	expressions+=XVariableDeclaration*;
+
+Import:
+	'import' importedNamespace=QualifiedNameWithWildCard
+;
+
+QualifiedNameWithWildCard:
+	QualifiedName '.*'?
+;
+
+XIntLiteral returns xbase::XExpression:
+	{DateLiteral } =>day=INT '.' month=INT '.' year=INT
+  | {xbase::XIntLiteral} value=INT
+;
+
+
+XVariableDeclaration returns xbase::XExpression:
+	{xbase::XVariableDeclaration}
+	type=JvmTypeReference name=ID '=' right=XExpression
+;
+
+XBlockExpression returns xbase::XExpression:
+	{ObjectLiteral}
+	'{'
+		expressions+=XExpression*
+	'}'
+;
+

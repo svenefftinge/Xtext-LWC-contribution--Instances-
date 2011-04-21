@@ -1,0 +1,41 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.lwc.instances
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0
+Bundle-SymbolicName: org.xtext.lwc.instances; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0";visibility:=reexport,
+ org.apache.log4j;bundle-version="1.2.15";visibility:=reexport,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.ui.codetemplates;resolution:=optional,
+ org.eclipse.xtext.xbase;bundle-version="2.0.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.eclipse.xtext.xtend2.lib
+Import-Package: org.apache.log4j,
+ org.apache.commons.logging,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtext.xtend2.lib
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.xtext.lwc.instances,
+ org.xtext.lwc.instances.formatting,
+ org.xtext.lwc.instances.generator,
+ org.xtext.lwc.instances.instances,
+ org.xtext.lwc.instances.instances.impl,
+ org.xtext.lwc.instances.instances.util,
+ org.xtext.lwc.instances.parseTreeConstruction,
+ org.xtext.lwc.instances.parser.antlr,
+ org.xtext.lwc.instances.parser.antlr.internal,
+ org.xtext.lwc.instances.scoping,
+ org.xtext.lwc.instances.services,
+ org.xtext.lwc.instances.typesystem,
+ org.xtext.lwc.instances.validation
+
